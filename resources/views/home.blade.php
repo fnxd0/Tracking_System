@@ -14,10 +14,15 @@
                 <div class="card mb-4 shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title fw-bold">Rastrear usando código de rastreamento</h5>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Código de rastreamento">
-                            <button class="btn btn-primary" type="button">Consultar</button>
-                        </div>
+
+                        <form action="{{ route('frete.rastreamento') }}" method="GET">
+
+                            <div class="input-group">
+                                <input type="text" name="codigo_rastreio" class="form-control"
+                                    placeholder="Código de rastreamento" required>
+                                <button class="btn btn-primary" type="submit">Consultar</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
 
@@ -25,10 +30,14 @@
                 <div class="card shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title fw-bold">Histórico de encomendas do Cliente</h5>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Número de telefone">
-                            <button class="btn btn-primary" type="button">Consultar</button>
-                        </div>
+
+                        <form method="GET" action=""">
+                            <div class="input-group">
+                                <input type="text" name="telefone" class="form-control"
+                                    placeholder="Número de telefone" required>
+                                <button class="btn btn-primary" type="submit">Consultar</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
 
