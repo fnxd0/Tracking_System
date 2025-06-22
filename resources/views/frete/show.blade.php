@@ -4,9 +4,9 @@
         <!-- Cabeçalho do rastreamento -->
         <div class="p-4 rounded shadow text-white mb-4" style="background: linear-gradient(to right, #007BFF);">
             <h3 class="fw-bold">📦 Rastreamento Encomenda</h3>
-            <p class="mb-1">Código de Rastreamento: <strong>TESTE123</strong></p>
-            <p class="mb-1">Status: <span class="badge bg-success">Entregue</span></p>
-            <p class="mb-0">Destino: <strong>Av. Paulista, 1000 - Centro (São Paulo)</strong></p>
+            <p class="mb-1">Código de Rastreamento: <strong>{{$frete->codigo_rastreio}}</strong></p>
+            <p class="mb-1">Status: <span class="badge bg-success">{{$frete->status}}</span></p>
+            <p class="mb-0">Destino: <strong>{{$frete->destino}}</strong></p>
         </div>
 
         <!-- Histórico de movimentações -->
