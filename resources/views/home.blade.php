@@ -31,10 +31,10 @@
                     <div class="card-body">
                         <h5 class="card-title fw-bold">Histórico de encomendas do Cliente</h5>
 
-                        <form method="GET" action=""">
+                        <form action="{{ route('frete.historico') }}" method="GET">
                             <div class="input-group">
-                                <input type="text" name="telefone" class="form-control"
-                                    placeholder="Número de telefone" required>
+                                <input type="text" name="cpf" class="form-control" oninput="formatarCPF(this)"
+                                    placeholder="Insira o CPF cadastrado" required>
                                 <button class="btn btn-primary" type="submit">Consultar</button>
                             </div>
                         </form>
@@ -44,5 +44,20 @@
             </div>
         </div>
     </main>
+    <script>
+        function formatarCPF(campo) {
+            let value = campo.value.replace(/\D/g, ''); // Remove tudo que não é número
+
+            if (value.length > 11) {
+                value = value.slice(0, 11);
+            }
+
+            value = value.replace(/(\d{3})(\d)/, '$1.$2');
+            value = value.replace(/(\d{3})(\d)/, '$1.$2');
+            value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+
+            campo.value = value;
+        }
+    </script>
 
 </x-layout>

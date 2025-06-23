@@ -4,7 +4,8 @@
         <div class="p-4 rounded shadow text-white mb-4" style="background: linear-gradient(to right, #007BFF);">
             <h3 class="fw-bold">📦 Rastreamento Encomenda</h3>
             <p class="mb-1">Código de Rastreamento: <strong>{{ $frete->codigo_rastreio }}</strong></p>
-            <p class="mb-1">Status: <span class="badge bg-success">{{ $frete->status }}</span></p>
+            <p class="mb-1">Status: <span
+                    class="badge {{ $frete->status->pegarCorEtiqueta() }}">{{ $frete->status }}</span></p>
             <p class="mb-0">Destino: <strong>{{ $frete->destino }}</strong></p>
         </div>
 
