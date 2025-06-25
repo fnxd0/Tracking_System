@@ -6,7 +6,6 @@ use App\Enums\FreteStatus;
 use App\Helpers;
 use App\Http\Requests\StoreFreteRequest;
 use App\Models\Frete;
-use Illuminate\Http\Request;
 
 class FreteController extends Controller
 {
