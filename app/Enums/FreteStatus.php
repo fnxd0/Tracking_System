@@ -17,4 +17,16 @@ enum FreteStatus: string
             self::ENTREGUE => 'bg-success',
         };
     }
+
+    public static function fromName(string $name): ?FreteStatus
+{
+    foreach (FreteStatus::cases() as $case) {
+        if ($case->name === $name) {
+            return $case;
+        }
+    }
+
+    return null;
+}
+
 }

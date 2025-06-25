@@ -13,4 +13,17 @@ class ClienteController extends Controller
         $cliente = Cliente::create($request->all());
         return $cliente;
     }
+
+    public function searchByCpf(string $cpf)
+    {
+        $cpf = preg_replace('/\D/', '', $cpf);
+
+        $cliente = Cliente::where('cpf', $cpf)->first();
+
+        if (!$cliente) {
+            return response()->json(['message' => 'Cliente não encontrado'], 404);
+        }
+
+        return response()->json($cliente);
+    }
 }

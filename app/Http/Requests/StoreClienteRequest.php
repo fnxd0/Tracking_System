@@ -28,4 +28,12 @@ class StoreClienteRequest extends FormRequest
             'telefone' => ['required', 'string', 'regex:/^\d{10,11}$/']
         ];
     }
+
+    protected function prepareForValidation()
+    {
+        $this->merge([
+            'cpf' => preg_replace('/\D/', '', $this->cpf),
+            'telefone' => preg_replace('/\D/', '', $this->telefone),
+        ]);
+    }
 }

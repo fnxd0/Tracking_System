@@ -33,7 +33,7 @@
 
                         <form action="{{ route('frete.historico') }}" method="GET">
                             <div class="input-group">
-                                <input type="text" name="cpf" class="form-control" oninput="formatarCPF(this)"
+                                <input type="text" name="cpf" class="form-control"
                                     placeholder="Insira o CPF cadastrado" required>
                                 <button class="btn btn-primary" type="submit">Consultar</button>
                             </div>
@@ -45,19 +45,10 @@
         </div>
     </main>
     <script>
-        function formatarCPF(campo) {
-            let value = campo.value.replace(/\D/g, ''); // Remove tudo que não é número
-
-            if (value.length > 11) {
-                value = value.slice(0, 11);
-            }
-
-            value = value.replace(/(\d{3})(\d)/, '$1.$2');
-            value = value.replace(/(\d{3})(\d)/, '$1.$2');
-            value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
-
-            campo.value = value;
-        }
+        document.addEventListener("DOMContentLoaded", function() {
+            Inputmask("999.999.999-99").mask(document.querySelector("input[name='cpf']"));
+        });
     </script>
+
 
 </x-layout>
