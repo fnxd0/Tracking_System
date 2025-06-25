@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Cliente extends Model
 {
+    protected $fillable = ['cpf', 'nome', 'email', 'telefone'];
     public function enviados(): HasMany
     {
         return $this->HasMany(Frete::class, 'remetente_id');
