@@ -7,7 +7,7 @@ use App\Models\Cliente;
 
 class ClienteController extends Controller
 {
-    public function store(StoreClienteRequest $request)
+    public function store(StoreClienteRequest $request): Cliente
     {
         // dd($request->all());
         $cliente = Cliente::create($request->all());

@@ -25,7 +25,7 @@ class StoreEtapaRequest extends FormRequest
         return [
             "frete_id" => ["required", 'exists:fretes,id'],
             "descricao" => ["required", "string", "max:255"],
-            "tipo_etapa" => ["required", Rule::in(['EM_TRANSITO', 'SAIU_PARA_ENTRGA', 'ENTREGUE'])]
+            "tipo_etapa" => ["required", Rule::in(['EM_TRANSITO', 'SAIU_PARA_ENTREGA', 'ENTREGUE'])]
         ];
     }
 }
